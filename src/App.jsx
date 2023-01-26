@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './App.css'
 import { LoadingScreen } from './components/LoadingScreen'
+import { NotFoundScreen } from './components/NotFoundScreen'
 import { Pokemon } from './components/Pokemon'
 
 function App() {
@@ -35,11 +36,12 @@ function App() {
     setInputValue(e.target.namePoke.value)
   }
 
+  const handleInput = e => setInputValue(e.target.value)
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit} className="poke__form" >
-        <input type="text" id="namePoke" placeholder='Ex: Pikachu' />
-        <button>Search</button>
+        <input type="text" id="namePoke" placeholder='Ex: Pikachu' onKeyUp={handleInput} />
       </form>
       <div className='card__container'>
         {
@@ -47,7 +49,7 @@ function App() {
             <LoadingScreen />
           :
             hasError ?
-              <h1>Pokemon not found</h1>
+              <NotFoundScreen />
             :
               <Pokemon pokemon={pokemon} />
         }

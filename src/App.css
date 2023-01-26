@@ -82,18 +82,18 @@
     border-radius: 10px;
     font-size: 25px;
 }
-.load__card {
+.msg__screen {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.load__card > img {
+.msg__screen > img {
     max-width: 150px;
 }
 
-.load__card > h5 {
+.msg__screen > h5 {
     font-size: 25px;
     margin-top: 1rem;
     font-family: 'Inconsolata', monospace;
