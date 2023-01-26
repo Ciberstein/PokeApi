@@ -2,14 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh;
+    min-height: 80vh;
     gap: 1rem;
     flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .pokemon__card {
     background-color: beige;
-    width: max-content;
+    max-width: 300px;
     box-shadow: 5px 5px 10px black;
     transition: transform 300ms ease, background-color 300ms ease;
 }
@@ -25,7 +26,7 @@
 
 .pokemon__img{
     transition: transform 300ms ease;
-    max-width: 300px;
+    width: 100%;
 }
 
 .pokemon__img:hover {
@@ -57,7 +58,6 @@
     font-family: 'Inconsolata', monospace;
 }
 .poke__form {
-    height: 3rem;
     background-image: url(https://st2.depositphotos.com/2225062/10009/v/450/depositphotos_100091406-free-stock-illustration-ground-pattern-pixel-art-illustration.jpg);
     background-repeat: repeat;
     display: flex;
@@ -67,7 +67,15 @@
     padding: 1rem;
     border-bottom: 2px solid black;
     box-shadow: 5px 5px 10px black;
+    flex-wrap: wrap;
 }
+
+@media (max-width: 500px) {
+    .poke__form > input, .poke__form > button {
+        width: 100%;
+    }
+} 
+
 .poke__form > input, .poke__form > button {
     border: 2px solid black;
     padding: .7rem;
