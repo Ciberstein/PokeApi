@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${inputValue === '' ? 'pikachu' : inputValue }`
+    const url = `https://pokeapi.co/api/v2/pokemon/${inputValue === '' ? 'pikachu' : inputValue.toLowerCase() }`
     setIsLoading(true)
     axios.get(url)
     .then(res => { 
